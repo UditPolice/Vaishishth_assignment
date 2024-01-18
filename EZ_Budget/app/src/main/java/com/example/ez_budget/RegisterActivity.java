@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = edUsername.getText().toString();
                 String email = edEmail.getText().toString();
                 String confirm = edConfirm.getText().toString();
-                Database db = new Database (getApplicationContext(),"healthcare",null,1);
+                Database db = new Database (getApplicationContext(),"Employees",null,1);
                 if (username.length()==0 || password.length()==0 || email.length()==0 || confirm.length()==0){
                     Toast.makeText(getApplicationContext(),"Please fill all details",Toast.LENGTH_SHORT).show();
                 }
@@ -55,8 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                         else {
                             Toast.makeText(getApplicationContext(), "4 letters and a number", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                    else {
+                    } else {
                         Toast.makeText(getApplicationContext(), "Passwords didn't match", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -66,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public static boolean isValid(String passwordhere){
-        int f1=0,f2=0,f3=0;
+        int f1=0,f2=0 ;
         if(passwordhere.length()<4){
             return false;
         }
@@ -76,7 +75,6 @@ public class RegisterActivity extends AppCompatActivity {
                     f1=1;
                 }
             }
-
             if (f1==1)
                 return true;
             return false;

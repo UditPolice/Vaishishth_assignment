@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                         startActivity(new Intent(MainActivity.this, HomeActivity.class));
                     } else {
-                        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                        Toast.makeText(getApplicationContext(),"Invalid",Toast.LENGTH_SHORT).show();
                     }
                 }
             }
