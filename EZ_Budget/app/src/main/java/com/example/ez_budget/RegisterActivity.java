@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public static boolean isValid(String passwordhere){
-        int f1=0,f2=0 ;
+        int f1=0,f2=0, f3=0 ;
         if(passwordhere.length()<4){
             return false;
         }
@@ -75,9 +75,22 @@ public class RegisterActivity extends AppCompatActivity {
                     f1=1;
                 }
             }
-            if (f1==1)
+            for (int r = 0; r<passwordhere.length();r++){
+                if (Character.isDigit(passwordhere.charAt(r))){
+                    f2=1;
+                }
+            }
+            for (int s = 0; s<passwordhere.length();s++){
+                char c=passwordhere.charAt(s);
+                if (c>=33&&c<=46 ||c==64){
+                    f3=1;
+                }
+            }
+            if(f1==1 && f2==1 && f3==1)
                 return true;
+
             return false;
+
         }
     }
 }
